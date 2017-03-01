@@ -18,22 +18,25 @@ class Elevator:
         self.doors_open = False
         self.moving = False
 
-    def move(floor):
-        if self.current_floor == floor:
+    def move(target_floor):
+        if self.current_floor == target_floor:
             return
 
-        if floor > self.max_floor:
+        if target_floor > self.max_floor:
             raise MaxFloorError("An elevator cannot go higher then its max floors")
 
-        if floor < self.min_floor:
+        if target_floor < self.min_floor:
             raise MinFloorError("An elevator cannot go lower then its min floors")
 
-        step = 1 if self.current_floor < floor else -1
-        for index in range(self.current_floor, floor, step):
+        self.moving = True
+        step = 1 if self.current_floor < target_floor else -1
+
+        for index in range(self.current_floor, target_floor, step):
             time.delay(SPEED)
+            self.current_floor = index
             print("Current floor: %s", index)
 
-        self.current_floor = floor
+        self.moving = False
 
     def cycle_doors():
         open_doors()
