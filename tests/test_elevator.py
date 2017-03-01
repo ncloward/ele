@@ -19,12 +19,20 @@ def test_initialise_current_floor():
     assert elevator.max_floor == 10
     assert elevator.current_floor == 2
 
-def test_move_up():
+def test_move_up_success():
     # Test the move function for an elevator in the up direction.
     pass
 
-def test_move_down():
+def test_move_up_max_floor():
+    # Test the move function for an elevator so it cannot go passed the max floor count
+    pass
+
+def test_move_down_success():
     # Test the move function for an elevator in the down direction.
+    pass
+
+def test_move_up_min_floor():
+    # Test the move function for an elevator so it cannot go passed the min floor count
     pass
 
 def test_open_doors():
