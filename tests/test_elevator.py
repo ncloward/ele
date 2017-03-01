@@ -46,3 +46,13 @@ def test_close_doors():
 def test_cycle_doors():
     # Test the cycle_doors function for an elevator
     pass
+
+def test_priority_success():
+    # Test various priorities against an elevator to ensure
+    # that the priority is returning correctly.
+    pass
+
+def test_priority_moving():
+    # Test various priorities against a set of elevators and one that is moving
+    # to ensure that the priority is returning correctly.
+    pass

@@ -16,6 +16,7 @@ class Elevator:
         self.max_floor = max_floor
         self.current_floor = current_floor
         self.doors_open = False
+        self.moving = False
 
     def move(floor):
         if self.current_floor == floor:
@@ -51,3 +52,21 @@ class Elevator:
         time.delay(DOORS_SPEED)
         self.doors_open = False
         print("Closing doors")
+
+    def pirority(target_floor):
+        """
+        This method will calculate the elevators priority when a target floor
+        is passed in.  This will be calculated based on the elevators current floor
+        or its direction. If its moving.
+
+        Priority will be based on the distance between the target floor and current
+        floor.  A higher priority is not better, because we are calculating the priority
+        with the distance the elveator furthest away will have a higher priority. If the
+        elevator is moving we can subtract the max floor from the priority to move it to
+        the top.  There are probably better ways to calculate this but for now this shoul
+        work.
+        """
+        priority = abs(target_floor - self.current_floor)
+        if self.moving:
+            priority = self.max_floor - priority
+        return priority
