@@ -37,6 +37,7 @@ class Elevator:
             print("Current floor: %s", index)
 
         self.moving = False
+        cycle_doors()
 
     def cycle_doors():
         open_doors()
