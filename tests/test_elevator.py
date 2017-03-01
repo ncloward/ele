@@ -26,3 +26,15 @@ def test_move_up():
 def test_move_down():
     # Test the move function for an elevator in the down direction.
     pass
+
+def test_open_doors():
+    # Test the open_doors function for an elevator
+    pass
+
+def test_close_doors():
+    # Test the close_doors function for an elevator
+    pass
+
+def test_cycle_doors():
+    # Test the cycle_doors function for an elevator
+    pass
